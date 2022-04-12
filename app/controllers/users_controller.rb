@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = current_user
     # binding.pry
 
-    @post_images = @user.post_images
+    @post_images = @user.post_images.page(params[:page])
   end
 
   def edit
